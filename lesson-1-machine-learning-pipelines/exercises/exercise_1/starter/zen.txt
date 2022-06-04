@@ -1,4 +1,4 @@
-The Zen of Python, by Tim Peters
+The Zen of Python, by Tim Peters y la guía de autors de Python, de Eric Raymond y de Brian Wichman. GAA
 
 Beautiful is better than ugly.
 Explicit is better than implicit.
