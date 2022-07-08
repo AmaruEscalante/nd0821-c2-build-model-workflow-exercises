@@ -1,0 +1,27 @@
+name: eda_replicable
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+      input_artifact:
+        description: Name of the W&B artifact to use as input
+        type: string
+
+      artifact_name:
+        description: Name of the W&B artifact to create
+        type: string
+
+      artifact_type:
+        description: Type of the W&B artifact to create
+        type: string
+
+      artifact_description:
+        description: Description of the W&B artifact to create
+        type: string
+
+    command: >-
+      python run.py --input_artifact {input_artifact} \
+        --artifact_name {artifact_name} \
+        --artifact_type {artifact_type} \
+        --artifact_description {artifact_description}
