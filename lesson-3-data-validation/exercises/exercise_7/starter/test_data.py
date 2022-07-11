@@ -66,12 +66,13 @@ def test_class_names(data):
         "dnb",
         "hardstyle",
     ]
-
+    assert data['genre'].isin(known_classes).all()
     # YOUR CODE HERE: implement a test that checks the "genre" column to make sure
     # that the class names are legal
     # HINT: you can use the .isin method of pandas, and .all to check that the condition
     # is true for every row. For example, df['one'].isin(['a','b','c']).all() is True if
     # all values in column "one" are contained in the list 'a', 'b', 'c'
+
 
 
 def test_column_ranges(data):
@@ -90,9 +91,9 @@ def test_column_ranges(data):
         "tempo": (50, 250),
         "duration_ms": (20000, 1000000),
     }
-
     for col_name, (minimum, maximum) in ranges.items():
+        print(f"Testing {col_name}")
+        assert data[col_name].dropna().between(minimum, maximum).all()
         # YOUR CODE HERE: check that the values in the column col_name are within the expected range
         # HINT: look at the .between method of pandas, and then use .all() like in the previous
         # test
-        pass
